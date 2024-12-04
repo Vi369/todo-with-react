@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import {addTodo, updateTodo, removeTodo, toggleIsCompleted} from "./TodoFunctions/functions.js"
+import { TodoProvider } from "./contexts/index.js"
+import {TodoForm, TodoItem} from "./components/index.js"
 import './App.css'
 
 function App() {
@@ -45,9 +47,18 @@ function App() {
         removeTodo : handleRemoveTodo,
         toggleIsCompleted : handleToggleIsCompleted
     }}>
+        
+        <TodoForm />
 
-        
-        
+        {
+            todos.map((todo)=>{
+                console.log(todo)
+                return <div key={todo.id}>
+                    <TodoItem todo={todo} />
+                </div>
+            })
+        }
+
     </TodoProvider>
   )
 }
