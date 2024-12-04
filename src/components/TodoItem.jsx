@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import { useTodo } from '../contexts/TodoContext';
 
 function TodoItem({todo}) {
-    console.log(todo.isCompleted)
     const [isTodoEditable, setIsTodoEditable] = useState(false);
 
     const [todoMessage, setTodoMessage] = useState(todo.todo);
@@ -12,9 +11,7 @@ function TodoItem({todo}) {
 
     // handle checkbox function
     const handleIsCompleted = ()=>{
-        console.log("is completed call")
-        console.log(todo.id)
-        
+        toggleIsCompleted(todo.id)
     }
 
     // handle edit button 
@@ -29,7 +26,7 @@ function TodoItem({todo}) {
         // checkbox
         <input type="checkbox"
         checked = {todo.isCompleted}
-        onChange={()=> toggleIsCompleted(todo.id)}
+        onChange={handleIsCompleted}
         />
 
         <input type="text" 

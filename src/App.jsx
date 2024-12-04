@@ -52,7 +52,6 @@ function App() {
 
         {
             todos.map((todo)=>{
-                console.log(todo)
                 return <div key={todo.id}>
                     <TodoItem todo={todo} />
                 </div>
