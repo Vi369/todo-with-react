@@ -22,21 +22,23 @@ function TodoItem({todo}) {
         updateTodo(todo.id, {...todo, todo: todoMessage});
     }
   return (
-    <div className='bg-black'>
-        // checkbox
+    <div className='flex justify-center items-center gap-2 my-2'>
+        
         <input type="checkbox"
         checked = {todo.isCompleted}
         onChange={handleIsCompleted}
+        className='mr-2 w-6 h-6 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
         />
 
         <input type="text" 
-            className= ''
+            className= {`${todo.isCompleted ? "line-through" : ""} ${isTodoEditable ? "bg-slate-100" :  "bg-gray-400"} px-4 py-2 w-1/2 rounded-md border-2`}
             value={todoMessage}
             onChange={(e)=> setTodoMessage(e.target.value)}
             readOnly = {!isTodoEditable}
         />
 
-        <button
+        <button 
+            className='inline-flex w-8 h-8 rounded-lg text-sm border border-black/10 justify-center items-center bg-gray-50 hover:bg-gray-100 shrink-0'
             onClick={()=>{
                 if(todo.isCompleted){
                     return

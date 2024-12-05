@@ -48,15 +48,22 @@ function App() {
         toggleIsCompleted : handleToggleIsCompleted
     }}>
         
-        <TodoForm />
+        <div className='bg-slate-900 min-h-screen flex flex-col  '>
+            
+            <div className='mt-20'>
+                <TodoForm />
+            </div>
 
-        {
-            todos.map((todo)=>{
-                return <div key={todo.id}>
-                    <TodoItem todo={todo} />
-                </div>
-            })
-        }
+            <div className='mt-20'>
+                {
+                    todos.map((todo)=>{
+                        return <div className='' key={todo.id}>
+                            <TodoItem todo={todo} />
+                        </div>
+                    })
+                }
+            </div>
+        </div>
 
     </TodoProvider>
   )

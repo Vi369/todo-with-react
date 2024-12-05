@@ -13,16 +13,16 @@ function TodoForm() {
     }
   return (
     <>
-        <form onSubmit={handleTodoSubmit}>
+        <form onSubmit={handleTodoSubmit} className='flex justify-center items-center'>
             <input type="text"
             placeholder='Enter Your todo Task...'
-            className=''
+            className= {`px-4 py-2 w-1/2 rounded-md border-2`}
             value={todo}
             onChange={(e)=> (setTodo(e.target.value))}
              />
             <button 
                 type="submit"
-                className=''
+                className='px-4 py-2 ml-4 bg-indigo-500 text-white rounded-md hover:bg-indigo-600 '
             >Add</button>
         </form>
     </>
