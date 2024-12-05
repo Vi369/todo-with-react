@@ -51,6 +51,7 @@ function App() {
         <div className='bg-slate-900 min-h-screen flex flex-col  '>
             
             <div className='mt-20'>
+            <h1 className='text-3xl text-white text-center font-bold mb-5'>Mange Your Todos </h1>
                 <TodoForm />
             </div>
 
